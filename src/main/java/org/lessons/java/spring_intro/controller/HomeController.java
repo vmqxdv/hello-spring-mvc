@@ -1,5 +1,8 @@
 package org.lessons.java.spring_intro.controller;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,20 @@ public class HomeController {
     model.addAttribute("name", name);
 
     return "greetings";
+  }
+
+  @GetMapping("/getTime")
+  public String getTime(Model model) {
+    model.addAttribute("currentTime", LocalTime.now());
+
+    return "getTime";
+  }
+
+  @GetMapping("/getDate")
+  public String getDate(Model model) {
+    model.addAttribute("currentDate", LocalDate.now());
+
+    return "getDate";
   }
 
 }
