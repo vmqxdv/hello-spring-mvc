@@ -39,4 +39,11 @@ public class HomeController {
     return "getDate";
   }
 
+  @GetMapping("/createEmail")
+  public String createEmail(@RequestParam(name = "localPart") String localPart, Model model) {
+    model.addAttribute("localPart", localPart);
+
+    return "createEmail";
+  }
+
 }

@@ -4,14 +4,24 @@
     <a href="#" onclick="getUserName()">Saluto</a> /
     <a href="/getTime">Mostra Orario</a> /
     <a href="/getDate">Mostra Data</a> /
-    <a href="/createEmail">Genera Email</a>
+    <a href="#" onclick="generateEmail()">Genera Email</a>
   </nav>
 
   <script>
     function getUserName() {
       const userName = prompt("Scrivi il tuo nome per essere salutato:");
 
-      if (userName !== null && userName !== "") window.location.href = "greetings?name=" + encodeURIComponent(userName);
+      if (userName !== null && userName !== "")
+        window.location.href = "greetings?name=" + encodeURIComponent(userName);
+    }
+
+    function generateEmail() {
+      let localPart = prompt("Scrivi il tuo nome e cognome per generare la tua nuova email:");
+
+      localPart = localPart.toLocaleLowerCase().split(" ").join('.');
+
+      if (localPart !== null && localPart !== "")
+        window.location.href = `createEmail?localPart=${encodeURIComponent(localPart)}`;
     }
   </script>
 </header>
