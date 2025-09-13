@@ -9,10 +9,9 @@
 
 <body>
 
-  <h1>Questa è la home!</h1>
-  <h3>Clicca uno dei link per testare le varie pagine!</h3>
-
   <div th:replace="fragments/navbar :: siteHeader"></div>
+
+  <h1 th:text="'Ciao ' + ${name} + ' benvenuto!!'"></h1>
 
 </body>
 
