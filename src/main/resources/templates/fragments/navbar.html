@@ -1,0 +1,17 @@
+<header th:fragment="siteHeader">
+  <nav>
+    <a href="/">Home</a> /
+    <a href="#" onclick="getUserName()">Saluto</a> /
+    <a href="/getTime">Mostra Orario</a> /
+    <a href="/getDate">Mostra Data</a> /
+    <a href="/createEmail">Genera Email</a>
+  </nav>
+
+  <script>
+    function getUserName() {
+      const userName = prompt("Scrivi il tuo nome per essere salutato:");
+
+      if (userName !== null && userName !== "") window.location.href = "greetings?name=" + encodeURIComponent(userName);
+    }
+  </script>
+</header>
